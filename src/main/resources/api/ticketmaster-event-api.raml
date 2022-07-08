@@ -1,0 +1,58 @@
+#%RAML 1.0
+title: Ticketmaster Events
+description: System API to access Ticketmaster Events data.
+mediaType:
+  - application/json
+/events:
+  get:
+    displayName: Retrieve events
+    description: Retrieve events for the specified city. Optionally, events can be filtered by start date and time, end date and time, or both.
+    responses:
+      "200":
+        body:
+          items:
+            type: Event
+    queryParameters:
+      venueId?:
+        description: When provided, retrieves only events for the venue with this id.
+        example: KovZ917A5L7
+        type: string
+      city?:
+        description: When provided, retrieves only events in this city.
+        example: Las Vegas
+        type: string
+      startDateTime?:
+        description: When provided, retrieves only events after this date and time.
+        example: 2022-03-03T00:00:00Z
+        type: string
+      endDateTime?:
+        description: When provided, retrieves only events before this date and time.
+        example: 2022-12-31T00:00:00Z
+        type: string
+types:
+  Event:
+    description: Tailored event data type.
+    properties:
+      name:
+        description: Event name as returned by Ticketmaster.
+        example: Vegas Golden Knights vs. Boston Bruins
+        type: string
+      id:
+        description: Event unique identifier in Ticketmaster.
+        example: Z7r9jZ1AdFf8N
+        type: string
+      startDateTime:
+        description: Event start date and time as returned by Ticketmaster.
+        example: Example
+        type: string
+      venue:
+        description: Event venue details.
+        properties:
+          name:
+            description: Name of the venue as returned by Ticketmaster.
+            example: T-Mobile Arena
+            type: string
+          id:
+            description: Venue unique identifier in Ticketmaster.
+            example: Z7r9jZaeVo
+            type: string

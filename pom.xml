@@ -52,13 +52,6 @@
 			<version>1.5.8</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
-			<groupId>21f3ad09-5c5b-4a9e-a0ed-404bf9a8e21f</groupId>
-			<artifactId>ticketmaster-event-api</artifactId>
-			<version>1.1.0</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
 	</dependencies>
 
 	<repositories>

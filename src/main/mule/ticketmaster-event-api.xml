@@ -3,7 +3,7 @@
     <http:listener-config name="ticketmaster-event-api-httpListenerConfig">
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
-    <apikit:config name="ticketmaster-event-api-config" api="resource::21f3ad09-5c5b-4a9e-a0ed-404bf9a8e21f:ticketmaster-event-api:1.1.0:raml:zip:ticketmaster-event-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <apikit:config name="ticketmaster-event-api-config" api="ticketmaster-event-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <http:request-config name="ticketmaster-discovery-api-config" doc:name="HTTP Request configuration" doc:id="5b57f0cd-9844-42e7-a14d-ad2d1827ee18" basePath="/discovery/v2">
         <http:request-connection protocol="HTTPS" host="app.ticketmaster.com" />
     </http:request-config>
